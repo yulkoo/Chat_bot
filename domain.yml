@@ -29,6 +29,7 @@ slots:
 responses:
   utter_greet:
     - text: "Привет! Я HR-бот. Давай начнем интервью! Как к тебе обращаться?"
+    - text: "Здравствуй! Я HR-бот. Давай познакомимся. Как тебя зовут?"
 
   utter_greet_by_name:
     - text: "Рад знакомству, {name}! Давай обсудим твою кандидатуру."
@@ -55,17 +56,22 @@ responses:
     - text: "Я — HR-бот и могу отвечать только на вопросы по интервью. Попробуй задать что-то другое!"
 
   utter_choose_action:
-    - text: "На какую профессию претендуете? 
-             Выберете цифру. Project Manager: 1, Data analyst: 2, Data Engineer: 3, Data Scientist: 4, MLOps Engineer: 5"
+    - text: "На какую профессию претендуете? Выберите цифру или нажмите кнопку:"
+      buttons:
+        - title: "Project Manager"
+          payload: "/project_manager"
+        - title: "Data analyst"
+          payload: "/data_analyst"
+        - title: "Data Engineer"
+          payload: "/data_engineer"
+        - title: "Data Scientist"
+          payload: "/data_scientist"
+        - title: "MLOps Engineer"
+          payload: "/mlops_engineer"
 
-#      buttons:
-#        - title: "Project Manager"
-#          payload: "/project_manager"
-#        - title: "Data analyst"
-#          payload: "/data_analyst"
-#        - title: "Data Engineer"
-#          payload: "/data_engineer"
-#        - title: "Data Scientist"
-#          payload: "/data_scientist"
-#        - title: "MLOps Engineer"
-#          payload: "/mlops_engineer"
+  utter_ask_project_manager:
+    - text: "Отлично, ты выбрал профессию Project Manager. Давай обсудим твой опыт и навыки."
+
+  utter_ask_data_analyst:
+    - text: "Ты выбрал профессию Data Analyst. Расскажи о своем опыте и навыках."
+

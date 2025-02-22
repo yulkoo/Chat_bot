@@ -1,39 +1,33 @@
 version: "3.1"
 
 stories:
-- story: Кандидат представляется и рассказывает о себе и быть Project Manager
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: provide_name
-  - action: utter_greet_by_name
-  - intent: confirm_ready
-  - action: utter_choose_action
-  - intent: project_manager
-  - action: utter_ask_experience
-  - intent: provide_experience
-  - action: utter_ask_skills
-  - intent: provide_skills
-  - action: utter_ask_salary
-  - intent: provide_salary_expectation
-  - action: utter_goodbye
+  - story: Кандидат представляется и рассказывает о себе и быть Project Manager
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: provide_name
+      - action: utter_greet_by_name
+      - intent: confirm_ready
+      - action: utter_choose_action
 
+  - story: Проектный менеджер
+    steps:
+      - intent: project_manager
+      - action: utter_ask_project_manager
+      - intent: provide_experience
+      - action: utter_ask_skills
+      - intent: provide_skills
+      - action: utter_ask_salary
+      - intent: provide_salary_expectation
+      - action: utter_goodbye
 
-- story: Кандидат представляется и рассказывает о себе и хочет быть Data analyst
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: provide_name
-  - action: utter_greet_by_name
-  - intent: confirm_ready
-  - action: utter_choose_action
-  - intent: data_analyst
-  - action: utter_ask_experience
-  - intent: provide_experience
-  - action: utter_ask_skills
-  - intent: provide_skills
-  - action: utter_ask_salary
-  - intent: provide_salary_expectation
-  - action: utter_goodbye
-
-
+  - story: Аналитик
+    steps:
+      - intent: data_analyst
+      - action: utter_ask_data_analyst
+      - intent: provide_experience
+      - action: utter_ask_skills
+      - intent: provide_skills
+      - action: utter_ask_salary
+      - intent: provide_salary_expectation
+      - action: utter_goodbye

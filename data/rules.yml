@@ -14,7 +14,7 @@ rules:
 #- rule: Пользователь подтверждает готовность
 #  steps:
 #  - intent: confirm_ready
-#  - action: utter_ask_experience
+#  - action: utter_choose_action
 #
 #- rule: Получение навыков
 #  steps:
