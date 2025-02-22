@@ -1,0 +1,71 @@
+version: "3.1"
+
+intents:
+  - greet
+  - provide_name
+  - confirm_ready
+  - provide_experience
+  - provide_skills
+  - provide_salary_expectation
+  - goodbye
+  - fallback
+  - project_manager
+  - data_analyst
+  - data_engineer
+  - data_scientist
+  - mlops_engineer
+
+entities:
+  - name
+
+
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+
+responses:
+  utter_greet:
+    - text: "Привет! Я HR-бот. Давай начнем интервью! Как к тебе обращаться?"
+
+  utter_greet_by_name:
+    - text: "Рад знакомству, {name}! Давай обсудим твою кандидатуру."
+
+  utter_ask_experience:
+    - text: "Расскажи, какой у тебя опыт работы?"
+
+  utter_ask_skills:
+    - text: "Какие у тебя есть ключевые навыки?"
+
+  utter_ack_skills:
+    - text: "Отличные навыки! Это важно для работы в команде."
+
+  utter_ask_salary:
+    - text: "Каковы твои зарплатные ожидания?"
+
+  utter_ack_salary:
+    - text: "Записал твои зарплатные ожидания."
+
+  utter_goodbye:
+    - text: "Спасибо за интервью, {name}! Мы свяжемся с тобой."
+
+  utter_fallback:
+    - text: "Я — HR-бот и могу отвечать только на вопросы по интервью. Попробуй задать что-то другое!"
+
+  utter_choose_action:
+    - text: "На какую профессию претендуете? 
+             Выберете цифру. Project Manager: 1, Data analyst: 2, Data Engineer: 3, Data Scientist: 4, MLOps Engineer: 5"
+
+#      buttons:
+#        - title: "Project Manager"
+#          payload: "/project_manager"
+#        - title: "Data analyst"
+#          payload: "/data_analyst"
+#        - title: "Data Engineer"
+#          payload: "/data_engineer"
+#        - title: "Data Scientist"
+#          payload: "/data_scientist"
+#        - title: "MLOps Engineer"
+#          payload: "/mlops_engineer"

@@ -1,0 +1,96 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Привет
+    - Здравствуйте
+    - Добрый день
+
+- intent: provide_name
+  examples: |
+    - Меня зовут [Каролина](name)
+    - Я [Анна](name)
+    - Моё имя [Иван](name)
+    - Можно просто [Дима](name)
+
+- intent: confirm_ready
+  examples: |
+    - Да
+    - Давай
+    - Я готов
+    - Можно начинать
+    - Готово
+
+- intent: provide_experience
+  examples: |
+    - У меня 5 лет опыта работы в IT
+    - Я работал 3 года разработчиком
+    - Опыт работы 7 лет в маркетинге
+
+- intent: provide_skills
+  examples: |
+    - Владею Python и SQL
+    - Хорошо знаю Java и Spring Boot
+    - Умею работать с нейросетями
+
+- intent: provide_salary_expectation
+  examples: |
+    - Хочу зарплату от 150 000 рублей
+    - Ожидания по зарплате 100-120 тыс.
+    - Рассчитываю на 90 тысяч в месяц
+
+- intent: goodbye
+  examples: |
+    - До свидания
+    - Спасибо, до встречи
+    - Всего хорошего
+
+
+- intent: project_manager
+  examples: |
+    - 1
+    - Я хочу быть менеджером проектов
+    - Меня интересует Project Manager
+    - Project Manager
+    - Менеджер проектов
+    - Я претендую на должность Project Manager
+    - Хочу работать менеджером проектов
+    - Менеджер проектов — это моя цель
+    - Я хочу стать Project Manager
+    - Меня интересует управление проектами
+    - Хочу развиваться в направлении Project Manager
+    - Я ищу работу Project Manager
+    - Менеджер проектов — это моя профессия
+    - Я хочу работать в IT как Project Manager
+    - Project Manager — это моя мечта
+    - Хочу стать менеджером проектов в IT
+    - Я хочу быть PM
+    - PM — это моя цель
+    - Я хочу работать Project Manager в крупной компании
+    - Менеджер проектов — это то, чем я хочу заниматься
+    - Я хочу стать руководителем проектов
+    - Хочу быть Project Manager в международной компании
+    - Менеджер проектов — это моя специализация
+    - Я хочу развиваться как Project Manager
+    - Project Manager — это моя карьерная цель
+    - Я хочу работать в роли Project Manager
+    - Менеджер проектов — это моя профессия мечты
+
+- intent: data_analyst
+  examples: |
+    - 2
+
+- intent: data_engineer
+  examples: |
+    - 3
+
+- intent: data_scientist
+  examples: |
+    - 4
+
+- intent: mlops_engineer
+  examples: |
+    - 5
+
+

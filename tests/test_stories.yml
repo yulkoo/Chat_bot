@@ -1,0 +1,34 @@
+version: "3.1"
+
+stories:
+- story: Проверка базового диалога
+  steps:
+  - user: |
+      Привет
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Меня зовут Анна
+    intent: provide_name
+  - action: utter_greet_by_name
+  - user: |
+      У меня 5 лет опыта
+    intent: provide_experience
+  - action: utter_ack_experience
+  - user: |
+      Владею Python и SQL
+    intent: provide_skills
+  - action: utter_ack_skills
+  - user: |
+      Рассчитываю на 150 000 рублей
+    intent: provide_salary_expectation
+  - action: utter_ack_salary
+  - user: |
+      Хочу работать Data Scientist
+    intent: provide_position
+  - action: utter_ask_position
+  - user: |
+      Спасибо, до свидания!
+    intent: goodbye
+  - action: utter_goodbye
+

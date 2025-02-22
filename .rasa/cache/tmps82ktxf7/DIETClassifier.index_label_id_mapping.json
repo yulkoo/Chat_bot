@@ -1,0 +1,14 @@
+{
+  "0": "confirm_ready",
+  "1": "data_analyst",
+  "2": "data_engineer",
+  "3": "data_scientist",
+  "4": "goodbye",
+  "5": "greet",
+  "6": "mlops_engineer",
+  "7": "project_manager",
+  "8": "provide_experience",
+  "9": "provide_name",
+  "10": "provide_salary_expectation",
+  "11": "provide_skills"
+}
