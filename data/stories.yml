@@ -6,7 +6,7 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: provide_name
-      - action: action_extract_first_name
+#      - action: action_extract_first_name
       - action: utter_greet_by_name
       - intent: confirm_ready
       - action: utter_ask_birth_date
@@ -38,7 +38,7 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: provide_name
-      - action: action_extract_first_name
+#      - action: action_extract_first_name
       - action: utter_greet_by_name
       - intent: confirm_ready
       - action: utter_ask_birth_date
@@ -69,7 +69,7 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: provide_name
-      - action: action_extract_first_name
+#      - action: action_extract_first_name
       - action: utter_greet_by_name
       - intent: confirm_ready
       - action: utter_ask_birth_date
@@ -100,7 +100,7 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: provide_name
-      - action: action_extract_first_name
+#      - action: action_extract_first_name
       - action: utter_greet_by_name
       - intent: confirm_ready
       - action: utter_ask_birth_date

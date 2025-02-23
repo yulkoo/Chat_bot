@@ -50,6 +50,15 @@ entities:
   - risk_tool
   - conflict_type
   - budget_size
+  - etl_tools
+  - database_experience
+  - data_processing_experience
+  - ml_tools
+  - model_experience
+  - model_optimization
+  - automation_tools
+  - containerization_experience
+  - monitoring_tools
 
 #forms:
 #  skills_form:
@@ -265,7 +274,10 @@ responses:
   utter_ask_model_optimization:
     - text: "Какие методы вы применяете для оптимизации моделей?"
 
- # Вопросы для MLOps Engineer
+  # Вопросы для MLOps Engineer
+  utter_ask_mlops_engineer:
+    - text: "Вы выбрали профессию MLOps . {name}, был ли у вас опыт работы на аналогичной позиции?"
+
   utter_ask_automation_tools:
     - text: "Какие инструменты вы используете для автоматизации работы с ML-моделями?"
 
