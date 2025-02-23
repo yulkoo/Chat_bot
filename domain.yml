@@ -18,18 +18,24 @@ intents:
   - provide_birthdate
   - provide_important_factors
   - provide_reason_for_company
-  - provide_ask_data_scientist
-  - provide_ask_data_engineer
-  - provide_ask_mlops_engineer
+  # Project Manager
+  - provide_project_methodology
+  - provide_stakeholder_communication
+  - provide_risk_management
+  - provide_team_conflict_resolution
+  - provide_budget_management
   # Data Engineer
+  - provide_ask_data_engineer
   - provide_etl_tools
   - provide_database_experience
   - provide_data_processing_experience
   # Data Scientist
+  - provide_ask_data_scientist
   - provide_ml_tools
   - provide_model_experience
   - provide_model_optimization
   # MLOps Engineer
+  - provide_ask_mlops_engineer
   - provide_automation_tools
   - provide_containerization_experience
   - provide_monitoring_tools
@@ -39,6 +45,11 @@ entities:
   - skill
   - birthdate
   - phone
+  - methodology
+  - communication_type
+  - risk_tool
+  - conflict_type
+  - budget_size
 
 #forms:
 #  skills_form:
@@ -67,6 +78,20 @@ slots:
     mappings:
       - type: from_entity
         entity: phone
+
+  # Project Manager
+  project_methodology:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: methodology
+
+  stakeholder_experience:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: communication_type
+
   # Data Engineer
   etl_tools:
     type: text
@@ -194,6 +219,22 @@ responses:
 
   utter_ask_salary_expectation:
     - text: "{name}, какие у вас ожидания по зарплате?"
+
+  # Вопросы Project Manager
+  utter_ask_project_methodology:
+    - text: "Какие методологии управления проектами (Agile, Scrum, Waterfall) вы используете в работе?"
+
+  utter_ask_stakeholder_communication:
+    - text: "Опишите ваш опыт взаимодействия с заинтересованными сторонами (стейкхолдерами)."
+
+  utter_ask_risk_management:
+    - text: "Как вы подходите к управлению рисками в проектах?"
+
+  utter_ask_team_conflict_resolution:
+    - text: "Приведите пример, как вы разрешали конфликты в команде."
+
+  utter_ask_budget_management:
+    - text: "Какой у вас опыт управления бюджетом проекта?"
 
 
   # Вопросы для Data Engineer
