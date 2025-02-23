@@ -1,27 +1,29 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 # from typing import Any, Text, Dict, List
-#
 # from rasa_sdk import Action, Tracker
 # from rasa_sdk.executor import CollectingDispatcher
 #
+# REQUIRED_SKILLS = ["python", "sql", "алгоритмы", "git"]
 #
-# class ActionHelloWorld(Action):
 #
+# class ActionCompareSkills(Action):
 #     def name(self) -> Text:
-#         return "action_hello_world"
+#         return "action_compare_skills"
 #
-#     def run(self, dispatcher: CollectingDispatcher,
+#     def run(
+#             self,
+#             dispatcher: CollectingDispatcher,
 #             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#             domain: Dict[Text, Any]
+#     ) -> List[Dict[Text, Any]]:
 #
-#         dispatcher.utter_message(text="Hello World!")
+#         user_skills = [s.lower() for s in tracker.get_slot("skills") or []]
+#         missing_skills = [s for s in REQUIRED_SKILLS if s not in user_skills]
+#
+#         if missing_skills:
+#             dispatcher.utter_message(
+#                 response="utter_missing_skills",
+#                 missing_skills=", ".join(missing_skills))
+#         else:
+#             dispatcher.utter_message(response="utter_good_skills")
 #
 #         return []

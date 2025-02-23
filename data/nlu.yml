@@ -9,10 +9,30 @@ nlu:
 
   - intent: provide_name
     examples: |
-      - Меня зовут [Каролина](name)
-      - Я [Анна](name)
-      - Моё имя [Иван](name)
-      - Можно просто [Дима](name)
+      - Меня зовут [Иванов Иван Иванович](name)
+      - Я [Петросян Каролина Эдуардовна](name)
+      - Моё имя [Сидоров Петр Алексеевич](name)
+      - Зовут [Смирнова Марина Викторовна](name)
+
+  - intent: provide_birthdate
+    examples: |
+      - Моя дата рождения [21.07.1990](birthdate)
+      - Я родился [12.02.2007](birthdate)
+
+  - intent: provide_phone
+    examples: |
+      - Мой номер телефона [89876577234](phone)
+      - Контактный номер [+7 999 123-45-67](phone)
+
+  - intent: provide_important_factors
+    examples: |
+      - Гибкий график и карьерный рост
+      - Хорошая зарплата и коллектив
+
+  - intent: provide_reason_for_company
+    examples: |
+      - Ваша компания лидер на рынке
+      - Хочу работать с профессионалами
 
   - intent: confirm_ready
     examples: |
@@ -30,9 +50,20 @@ nlu:
 
   - intent: provide_skills
     examples: |
-      - Владею Python и SQL
-      - Хорошо знаю Java и Spring Boot
-      - Умею работать с нейросетями
+      - Владею [Python](skill) и [SQL](skill)
+      - Хорошо знаю [Java](skill) и [Spring Boot](skill)
+      - Умею работать с [нейросетями](skill)
+      - Я знаю [Java](skill)
+      - У меня есть опыт работы с [C++](skill) и [JavaScript](skill)
+      - Знаю [JavaScript](skill)
+      - Работал с [Java](skill) и [C++](skill)
+      - [Python](skill), [SQL](skill) и [Linux](skill)
+
+  - intent: check_skills
+    examples: |
+      - Проверь мои навыки
+      - Достаточно ли у меня знаний?
+      - Соответствую ли требованиям?
 
   - intent: provide_salary_expectation
     examples: |
@@ -45,56 +76,70 @@ nlu:
       - До свидания
       - Спасибо, до встречи
       - Всего хорошего
-#
-#- intent: project_manager
-#  examples: |
-#    - 1
-#    - Я выбираю 1
-#    - Профессия 1
-#    - Хочу быть Project Manager (1)
-#    - Я хочу быть менеджером проектов
-#    - Меня интересует Project Manager
-#    - Project Manager
-#    - Менеджер проектов
-#    - Я претендую на должность Project Manager
-#    - Хочу работать менеджером проектов
-#    - Менеджер проектов — это моя цель
-#    - Я хочу стать Project Manager
-#    - Меня интересует управление проектами
-#    - Хочу развиваться в направлении Project Manager
-#    - Я ищу работу Project Manager
-#    - Менеджер проектов — это моя профессия
-#    - Я хочу работать в IT как Project Manager
-#    - Project Manager — это моя мечта
-#    - Хочу стать менеджером проектов в IT
-#    - Я хочу быть PM
-#    - PM — это моя цель
-#    - Я хочу работать Project Manager в крупной компании
-#    - Менеджер проектов — это то, чем я хочу заниматься
-#    - Я хочу стать руководителем проектов
-#    - Хочу быть Project Manager в международной компании
-#    - Менеджер проектов — это моя специализация
-#    - Я хочу развиваться как Project Manager
-#    - Project Manager — это моя карьерная цель
-#    - Я хочу работать в роли Project Manager
-#    - Менеджер проектов — это моя профессия мечты
-#
-#- intent: data_analyst
-#  examples: |
-#    - 2
-#    - Я выбираю 2
-#    - Профессия 2
-#    - Data analyst
-#    - Я хочу быть аналитиком данных
-#
-#- intent: data_engineer
-#  examples: |
-#    - 3
-#
-#- intent: data_scientist
-#  examples: |
-#    - 4
-#
-#- intent: mlops_engineer
-#  examples: |
-#    - 5
+
+  - intent: provide_ask_data_scientist
+    examples: |
+      - Да
+      - Нет
+      - -
+  - intent: provide_ask_data_engineer
+    examples: |
+      - Да
+      - Нет
+      - -
+  - intent: provide_ask_mlops_engineer
+    examples: |
+      - Да
+      - Нет
+      - -
+
+    # Data Engineer
+  - intent: provide_etl_tools
+    examples: |
+      - Я использую Airflow и Apache Nifi
+      - Работаю с Apache Spark и Luigi
+      - Пишу кастомные пайплайны на Python
+
+  - intent: provide_database_experience
+    examples: |
+      - Работаю с PostgreSQL и MySQL
+      - Опыт работы с MongoDB и Redis
+      - Использую Google BigQuery для работы с большими объемами данных
+
+  - intent: provide_data_processing_experience
+    examples: |
+      - Применяю Spark для распределенной обработки данных
+      - Использую Kafka для потоковой передачи данных
+      - Применяю Data Quality Checks в Airflow
+
+  # Data Scientist
+  - intent: provide_ml_tools
+    examples: |
+      - Использую Scikit-learn и TensorFlow
+      - Работаю с PyTorch и LightGBM
+      - Применяю Keras для нейронных сетей
+
+  - intent: provide_model_experience
+    examples: |
+      - Разрабатывал классификационные модели для предсказания оттока клиентов
+      - Строил регрессионные модели для прогнозирования продаж
+      - Работал над рекомендательными системами
+
+  # MLOps Engineer
+  - intent: provide_automation_tools
+    examples: |
+      - Применяю MLflow для трекинга экспериментов
+      - Использую DVC для управления данными
+      - Разрабатываю пайплайны на Airflow
+
+  - intent: provide_containerization_experience
+    examples: |
+      - Использовал Docker для контейнеризации моделей
+      - Настраивал Kubernetes для масштабирования
+      - Разворачивал окружение через Helm
+
+  - intent: provide_monitoring_tools
+    examples: |
+      - Использую Prometheus и Grafana
+      - Применяю Seldon Core для мониторинга моделей
+      - Разрабатываю собственные скрипты для логирования

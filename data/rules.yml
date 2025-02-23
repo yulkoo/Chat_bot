@@ -1,10 +1,25 @@
 version: "3.1"
 
 rules:
-- rule: Приветствие
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - rule: Приветствие
+    steps:
+    - intent: greet
+    - action: utter_greet
+
+  - rule: Завершение интервью
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - rule: Обработка неизвестных вопросов
+    steps:
+    - intent: fallback
+    - action: utter_fallback
+
+#  - rule: Проверка навыков
+#    steps:
+#      - intent: check_skills
+#      - action: action_compare_skills
 
 #- rule: Запрос имени кандидата
 #  steps:
@@ -25,17 +40,6 @@ rules:
 #  steps:
 #  - intent: provide_skills
 #  - action: utter_ask_salary
-#
-#
-- rule: Завершение интервью
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-#
-- rule: Обработка неизвестных вопросов
-  steps:
-  - intent: fallback
-  - action: utter_fallback
 
 #- rule: Выбор профессии
 #  steps:

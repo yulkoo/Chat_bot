@@ -6,28 +6,110 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: provide_name
+#      - action: action_extract_first_name
       - action: utter_greet_by_name
       - intent: confirm_ready
+      - action: utter_ask_birth_date
+      - intent: provide_birthdate
+      - action: utter_ask_phone_number
+      - intent: provide_phone
+      - action: utter_ask_important_factors
+      - intent: provide_important_factors
+      - action: utter_ask_reason_for_company
+      - intent: provide_reason_for_company
       - action: utter_choose_action
-
-  - story: Проектный менеджер
-    steps:
-      - intent: project_manager
-      - action: utter_ask_project_manager
+      - intent: data_engineer
+      - action: utter_ask_data_engineer
+      - intent: provide_ask_data_engineer
+      - action: utter_ask_experience
       - intent: provide_experience
-      - action: utter_ask_skills
-      - intent: provide_skills
-      - action: utter_ask_salary
+      - action: utter_ask_salary_expectation
       - intent: provide_salary_expectation
-      - action: utter_goodbye
+      - action: utter_ask_etl_tools
+      - intent: provide_etl_tools
+      - action: utter_ask_database_experience
+      - intent: provide_database_experience
+      - action: utter_ask_data_processing_experience
+      - intent: provide_data_processing_experience
 
-  - story: Аналитик
+  - story: Data Scientist
     steps:
-      - intent: data_analyst
-      - action: utter_ask_data_analyst
+      - intent: greet
+      - action: utter_greet
+      - intent: provide_name
+#      - action: action_extract_first_name
+      - action: utter_greet_by_name
+      - intent: confirm_ready
+      - action: utter_ask_birth_date
+      - intent: provide_birthdate
+      - action: utter_ask_phone_number
+      - intent: provide_phone
+      - action: utter_ask_important_factors
+      - intent: provide_important_factors
+      - action: utter_ask_reason_for_company
+      - intent: provide_reason_for_company
+      - action: utter_choose_action
+      - intent: data_scientist
+      - action: utter_ask_data_scientist
+      - intent: provide_ask_data_scientist
+      - action: utter_ask_experience
       - intent: provide_experience
-      - action: utter_ask_skills
-      - intent: provide_skills
-      - action: utter_ask_salary
+      - action: utter_ask_salary_expectation
       - intent: provide_salary_expectation
-      - action: utter_goodbye
+      - action: utter_ask_ml_tools
+      - intent: provide_ml_tools
+      - action: utter_ask_model_experience
+      - intent: provide_model_experience
+      - action: utter_ask_model_optimization
+      - intent: provide_model_optimization
+
+  - story: MLOps Engineer
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: provide_name
+#      - action: action_extract_first_name
+      - action: utter_greet_by_name
+      - intent: confirm_ready
+      - action: utter_ask_birth_date
+      - intent: provide_birthdate
+      - action: utter_ask_phone_number
+      - intent: provide_phone
+      - action: utter_ask_important_factors
+      - intent: provide_important_factors
+      - action: utter_ask_reason_for_company
+      - intent: provide_reason_for_company
+      - action: utter_choose_action
+      - intent: mlops_engineer
+      - action: utter_ask_mlops_engineer
+      - intent: provide_ask_mlops_engineer
+      - action: utter_ask_experience
+      - intent: provide_experience
+      - action: utter_ask_salary_expectation
+      - intent: provide_salary_expectation
+      - action: utter_ask_automation_tools
+      - intent: provide_automation_tools
+      - action: utter_ask_containerization_experience
+      - intent: provide_containerization_experience
+      - action: utter_ask_monitoring_tools
+      - intent: provide_monitoring_tools
+
+#  - story: Аналитик
+#    steps:
+#      - intent: greet
+#      - action: utter_greet
+#      - intent: provide_name
+#      - action: utter_greet_by_name
+#      - intent: confirm_ready
+#      - action: utter_choose_action
+#      - intent: data_analyst
+#      - action: utter_ask_data_analyst
+#      - intent: provide_experience
+#      - action: utter_ask_skills
+#      - intent: provide_skills
+#      - active_loop: skills_form
+#      - active_loop: null
+#      - action: action_compare_skills
+#      - action: utter_ask_salary
+#      - intent: provide_salary_expectation
+#      - action: utter_goodbye
