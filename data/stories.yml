@@ -9,9 +9,6 @@ stories:
       - action: utter_greet_by_name
       - intent: confirm_ready
       - action: utter_choose_action
-
-  - story: Проектный менеджер
-    steps:
       - intent: project_manager
       - action: utter_ask_project_manager
       - intent: provide_experience
@@ -23,6 +20,12 @@ stories:
 
   - story: Аналитик
     steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: provide_name
+      - action: utter_greet_by_name
+      - intent: confirm_ready
+      - action: utter_choose_action
       - intent: data_analyst
       - action: utter_ask_data_analyst
       - intent: provide_experience
