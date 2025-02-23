@@ -14,10 +14,36 @@ intents:
   - data_engineer
   - data_scientist
   - mlops_engineer
+  - provide_phone
+  - provide_birthdate
+  - provide_important_factors
+  - provide_reason_for_company
+  - provide_ask_data_scientist
+  - provide_ask_data_engineer
+  - provide_ask_mlops_engineer
+  # Data Engineer
+  - provide_etl_tools
+  - provide_database_experience
+  - provide_data_processing_experience
+  # Data Scientist
+  - provide_ml_tools
+  - provide_model_experience
+  - provide_model_optimization
+  # MLOps Engineer
+  - provide_automation_tools
+  - provide_containerization_experience
+  - provide_monitoring_tools
 
 entities:
   - name
+  - skill
+  - birthdate
+  - phone
 
+#forms:
+#  skills_form:
+#    required_slots:
+#      - skills
 
 slots:
   name:
@@ -25,6 +51,78 @@ slots:
     mappings:
       - type: from_entity
         entity: name
+  skills:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: skill
+  birthdate:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: birthdate
+  phone:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone
+  # Data Engineer
+  etl_tools:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: etl_tools
+
+  database_experience:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: database_experience
+
+  data_processing_experience:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: data_processing_experience
+
+  # Data Scientist
+  ml_tools:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ml_tools
+
+  model_experience:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: model_experience
+
+  model_optimization:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: model_optimization
+
+  # MLOps Engineer
+  automation_tools:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: automation_tools
+
+  containerization_experience:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: containerization_experience
+
+  monitoring_tools:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: monitoring_tools
 
 responses:
   utter_greet:
@@ -35,13 +133,19 @@ responses:
     - text: "Рад знакомству, {name}! Давай обсудим твою кандидатуру."
 
   utter_ask_experience:
-    - text: "Расскажи, какой у тебя опыт работы?"
+    - text: "{name}, расскажите о вашем опыте работы."
 
   utter_ask_skills:
-    - text: "Какие у тебя есть ключевые навыки?"
+    - text: "{name}, какие у вас профессиональные навыки?"
 
   utter_ack_skills:
     - text: "Отличные навыки! Это важно для работы в команде."
+
+  utter_missing_skills:
+    - text: "Вам не хватает следующих навыков: {missing_skills}"
+
+  utter_good_skills:
+    - text: "Ваши навыки соответствуют требованиям!"
 
   utter_ask_salary:
     - text: "Каковы твои зарплатные ожидания?"
@@ -50,7 +154,8 @@ responses:
     - text: "Записал твои зарплатные ожидания."
 
   utter_goodbye:
-    - text: "Спасибо за интервью, {name}! Мы свяжемся с тобой."
+    - text: "Спасибо за предоставленную информацию, {name}!
+        Мы внимательно проанализируем ваши ответы и свяжемся с вами в ближайшее время."
 
   utter_fallback:
     - text: "Я — HR-бот и могу отвечать только на вопросы по интервью. Попробуй задать что-то другое!"
@@ -75,3 +180,56 @@ responses:
   utter_ask_data_analyst:
     - text: "Ты выбрал профессию Data Analyst. Расскажи о своем опыте и навыках."
 
+  utter_ask_birth_date:
+    - text: "{name}, когда вы родились? Укажите дату в формате ДД.ММ.ГГГГ."
+
+  utter_ask_phone_number:
+    - text: "{name}, укажите ваш номер телефона."
+
+  utter_ask_important_factors:
+    - text: "{name}, что для вас важно при выборе работы?"
+
+  utter_ask_reason_for_company:
+    - text: "{name}, почему вы выбрали именно нашу компанию?"
+
+  utter_ask_salary_expectation:
+    - text: "{name}, какие у вас ожидания по зарплате?"
+
+
+  # Вопросы для Data Engineer
+
+  utter_ask_data_engineer:
+    - text: "Вы выбрали профессию Data Engineer. {name}, был ли у вас опыт работы на аналогичной позиции?"
+
+  utter_ask_etl_tools:
+    - text: "Какие инструменты вы используете для создания ETL-пайплайнов?"
+
+  utter_ask_database_experience:
+    - text: "Какой у вас опыт работы с базами данных?"
+
+  utter_ask_data_processing_experience:
+    - text: "Опишите ваш опыт работы с пайплайнами обработки данных и потоковой передачей данных."
+
+  # Вопросы для Data Scientist
+
+  utter_ask_data_scientist:
+    - text: "Вы выбрали профессию Data Scientist. {name}, был ли у вас опыт работы на аналогичной позиции?"
+
+  utter_ask_ml_tools:
+    - text: "Какие библиотеки и фреймворки для машинного обучения вы используете?"
+
+  utter_ask_model_experience:
+    - text: "Какие типы моделей машинного обучения вы чаще всего разрабатываете?"
+
+  utter_ask_model_optimization:
+    - text: "Какие методы вы применяете для оптимизации моделей?"
+
+ # Вопросы для MLOps Engineer
+  utter_ask_automation_tools:
+    - text: "Какие инструменты вы используете для автоматизации работы с ML-моделями?"
+
+  utter_ask_containerization_experience:
+    - text: "Опишите ваш опыт работы с контейнерами и Kubernetes."
+
+  utter_ask_monitoring_tools:
+    - text: "Какие инструменты вы используете для мониторинга ML-моделей?"
