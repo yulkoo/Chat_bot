@@ -6,23 +6,29 @@ nlu:
       - Привет
       - Здравствуйте
       - Добрый день
+      - Приветик
+      - Прив
+      - Приветульки
 
   - intent: provide_name
     examples: |
       - Меня зовут [Иванов Иван Иванович](name)
-      - Я [Петросян Каролина Эдуардовна](name)
+      - [Петросян Каролина Эдуардовна](name)
       - Моё имя [Сидоров Петр Алексеевич](name)
       - Зовут [Смирнова Марина Викторовна](name)
+      - [Иванов Иван Иванович](name)
 
   - intent: provide_birthdate
     examples: |
       - Моя дата рождения [21.07.1990](birthdate)
       - Я родился [12.02.2007](birthdate)
+      - [12.02.2007](birthdate)
 
   - intent: provide_phone
     examples: |
       - Мой номер телефона [89876577234](phone)
       - Контактный номер [+7 999 123-45-67](phone)
+      - [89876577234](phone)
 
   - intent: provide_important_factors
     examples: |
@@ -41,6 +47,12 @@ nlu:
       - Я готов
       - Можно начинать
       - Готово
+      - Да пожалуйста
+      - Да да
+      - Да босс
+      - Вперед
+      - Подтвержаю
+      - Дададада
 
   - intent: provide_experience
     examples: |
@@ -77,21 +89,41 @@ nlu:
       - Спасибо, до встречи
       - Всего хорошего
 
-  - intent: provide_ask_data_scientist
+  - intent: provide_ask_universal
     examples: |
-      - Да
-      - Нет
-      - -
-  - intent: provide_ask_data_engineer
+      - Был
+      - Не был
+
+    #Project Manager
+  - intent: provide_project_methodology
     examples: |
-      - Да
-      - Нет
-      - -
-  - intent: provide_ask_mlops_engineer
+      - Использую гибридный подход: Scrum для разработки, Waterfall для документации
+      - Работаю в Agile-среде с двухнедельными спринтами
+      - Опыт внедрения Kanban в распределенных командах
+
+  - intent: provide_stakeholder_communication
     examples: |
-      - Да
-      - Нет
-      - -
+      - Провожу еженедельные совещания с продукт-оунером и спонсорами проекта
+      - Использую RACI-матрицу для управления ожиданиями
+      - Создаю прозрачную отчетность в Jira и Confluence
+
+  - intent: provide_risk_management
+    examples: |
+      - Составляю risk-бэклог с приоритизацией по вероятности и влиянию
+      - Провожу ежемесячные risk assessment сессии
+      - Использую Monte Carlo-симуляции для прогнозирования
+
+  - intent: provide_team_conflict_resolution
+    examples: |
+      - Урегулировал конфликт между разработчиками через фасилитированную дискуссию
+      - Внедрил ретроспективы для превентивного решения проблем
+      - Использовал технику "5 почему" для выявления корневой причины
+
+  - intent: provide_budget_management
+    examples: |
+      - Управлял бюджетом $2M IT-проекта с отклонением менее 5%
+      - Использую Earned Value Management для контроля затрат
+      - Оптимизировал расходы на 15% через переговоры с вендорами
 
     # Data Engineer
   - intent: provide_etl_tools

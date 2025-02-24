@@ -16,6 +16,11 @@ rules:
     - intent: fallback
     - action: utter_fallback
 
+  - rule: Проверка навыков
+    steps:
+      - intent: check_skills
+      - action: action_compare_skills
+
 #  - rule: Проверка навыков
 #    steps:
 #      - intent: check_skills
